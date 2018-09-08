@@ -7,10 +7,14 @@ public class CargoPlane extends Jet implements CargoCarrier {
 		super(model, speed, range, price);
 	}
 
-	// loadCargo method
+	// loadFast (interface)
+	public void loadFast() {
+		System.out.println("Cargo being loaded fast on " + getModel());
+	}
+	
+	// loadCargo
 	public void loadCargo() {
 		System.out.println("Cargo being loaded on " + getModel());
 	}
-	
 	
 }

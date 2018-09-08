@@ -23,33 +23,34 @@ public class AirField {
 	}
 
 	public void listFleet() {
-		
+
 		System.out.println();
-		for (Jet jet : jets) {
-			if(jet != null) {
-				System.out.println(jet);
+		for (Jet i : jets) {
+			if (i != null) {
+				System.out.println(i);
 			}
 		}
 		System.out.println();
 	}
-	
+
 	public void flyAllJets() {
-			
+
 		System.out.println();
 		for (Jet jet : jets) {
-			if(jet != null) {
+			if (jet != null) {
 				jet.fly();
 			}
 		}
 		System.out.println();
 	}
+
 	public void fastestJet() {
-		
+
 		System.out.println();
 		double fast = 0;
 		String model = "";
 		for (Jet jet : jets) {
-			if(jet != null) {
+			if (jet != null) {
 				if (jet.getSpeed() > fast) {
 					fast = jet.getSpeed();
 					model = jet.getModel();
@@ -59,47 +60,67 @@ public class AirField {
 		System.out.println(model + " is the fastest Jet with a speed of " + fast + " mph.");
 		System.out.println();
 	}
+
 	public void longestRangeJet() {
-		
+
 		System.out.println();
 		int longest = 0;
 		String model = "";
 		for (Jet jet : jets) {
-			if(jet != null) {
+			if (jet != null) {
 				if (jet.getRange() > longest) {
 					longest = jet.getRange();
 					model = jet.getModel();
 				}
 			}
 		}
-		System.out.println(model + " is the fly the furthest with a range of " + longest + " miles.");
+		System.out.println(model + " can fly the furthest with a range of " + longest + " miles.");
 		System.out.println();
 	}
-	
+
 	public void cargoJets() {
 		System.out.println();
 		for (Jet jet : jets) {
-			if(jet != null) {
-				if(jet instanceof CargoCarrier) {
-					((CargoCarrier)jet).loadCargo();
-					
-				}
-			}
-		}
-		System.out.println();
-	}
-	
-	public void fightJets() {
-		System.out.println();
-		for (Jet jet : jets) {
-			if(jet != null) {
-				if(jet instanceof FighterJet) {
-					((FighterJet)jet).fight();;
-					
+			if (jet != null) {
+				if (jet instanceof CargoCarrier) {
+					((CargoPlane) jet).loadFast();
+
 				}
 			}
 		}
 		System.out.println();
 	}
 
+	public void fightJets() {
+		System.out.println();
+		for (Jet jet : jets) {
+			if (jet != null) {
+				if (jet instanceof FighterJet) {
+					((FighterJet) jet).dropBomb();
+
+				}
+			}
+		}
+		System.out.println();
+	}
+
+	public void addJet(Jet newJet) {
+		for (int i = 0; i < jets.length; i++) {
+			if (jets[i] == null) {
+				jets[i] = newJet;
+				break;
+			}
+
+		}
+	}
+
+	public void loadCargo() {
+		System.out.println();
+		for (Jet jet : jets) {
+			if (jet != null) {
+				loadCargo();
+
+			}
+		}
+	}
 }

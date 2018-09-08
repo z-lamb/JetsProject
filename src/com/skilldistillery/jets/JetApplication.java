@@ -47,14 +47,27 @@ public class JetApplication {
 				hanger.fightJets();
 				break;
 			case "7":
+				System.out.println();
 				System.out.println("Please enter the information for a plane you would like to add to the airfield:");
+				System.out.println("Please enter the model");
+				String model = sc.nextLine();
+				System.out.println("Please enter the speed in mph");
+				double speed = sc.nextDouble();
+				System.out.println("Please enter the range in miles");
+				int range = sc.nextInt();
+				System.out.println("Please enter the price in USD");
+				long price = sc.nextLong();
+				JetImpl newJet = new JetImpl(model, speed, range, price);
 				
-				System.out.println("Enter information as Model, Speed, Range, Price");
-				userInput = sc.nextLine();
-				
+				hanger.addJet(newJet);
+				System.out.println();
+				sc.nextLine();
 				break;
 			case "8":
 				return;
+			case "9":
+				hanger.loadCargo();
+				break;
 			default:
 				System.out.println("Please make a selection between 1-8");
 			}
