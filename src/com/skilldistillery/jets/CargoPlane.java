@@ -9,7 +9,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	// loadCargo method
 	public void loadCargo() {
-		System.out.println("Cargo being loaded");
+		System.out.println("Cargo being loaded on " + getModel());
 	}
 	
 	

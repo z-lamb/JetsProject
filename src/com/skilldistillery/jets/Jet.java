@@ -8,7 +8,7 @@ public abstract class Jet {
 	
 	// fly method
 	public void fly() {
-		
+		System.out.println(getModel() + " has taken off!");
 	}
 	
 	// getSpeedInMach method
@@ -109,6 +109,9 @@ public abstract class Jet {
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
+	}
+
+	public Jet() {
 	}
 	 
 }
