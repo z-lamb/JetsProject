@@ -113,7 +113,7 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof FighterJet) {
-					 ((FighterJet) jet).dropBomb();
+					 ((FighterJet) jet).fight();
 
 				}
 			}

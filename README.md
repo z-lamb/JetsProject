@@ -36,7 +36,7 @@ This program was created with just under two weeks in the bootcamp as we had one
 
 ###Operation/Description of how program works:
 Follow these instructions for proper operation of the program
-Be all classes are in the same package
+Be sure all classes are in the same package
 See below for menu operation
 
 Jet Application is where the program runs
@@ -55,10 +55,111 @@ Menu operation
 - Option 6 will have all of the fighter jets in a dogfight
 - Option 7 will have a sub menu pop up
 	- The sub menu asks if you would like to add a Cargo, Fighter, or Vanilla plane to the fleet
-	- The other option for the sub menu si to return to the main menu
+	- The other option for the sub menu is to return to the main menu
 - Option 8 will quit the program
 
 After each menu or sub menu item is selected it will bring you back to the main menu. If an option is entered that is not available on the that menu you will be prompted again to make the correct selection.
+
+launch() method
+starts by creating a new scanner to be used inside the method
+calls the menu method to display the menu
+prompts user to make a selection in the switch
+each case is an option t use and then breaks to exit the menu
+case 1
+calls the object named hanger and the method inside that object called listFleet()
+case 2
+calls the object named hanger and the method inside that object called flyAllJets()
+case 3
+prompts the user in a sub menu if they want MPH or Mach displayed inside the switch
+each case accounts for fully uppercase or lowercase
+case MPH
+calls the object named hanger and the method inside that object called fastestJet()
+case MACH
+calls the object named hanger and the method inside that object called fastestJetMach()
+case 0
+returns to the main menu
+default just breaks out of the switch
+if the user did not enter 0 it will print the menu again for them to make a selection
+if the user entered the cases for mph or mach they will exit the sub menu and go back to the main menu
+the sub menu is inside in a do while loop to make sure they have the option to choose an item in the sub menu
+case 4
+calls the object named hanger and the method inside that object called longestRangeJet()
+case 5
+calls the object named hanger and the method inside that object called cargoJets()
+case 6
+calls the object named hanger and the method inside that object called fightJets()
+case 7
+prompts the user in a sub menu if they want to add a cargo jet, a fighter jet, or a vanilla jet displayed inside the switch
+each case accounts for fully uppercase or lowercase
+case cargo
+calls the newCargo() method
+case MACH
+calls the newFighter() method
+case MACH
+calls the newVanilla() method
+case 0
+returns to the main menu
+default just breaks out of the switch
+if the user did not enter 0 it will print the menu again for them to make a selection
+if the user entered the cases for cargo, fighter, or vanilla they will exit the sub menu and go back to the main menu
+the sub menu is inside in a do while loop to make sure they have the option to choose an item in the sub menu
+case 8
+exits the program
+default prompts the user to make a selection from the main menu
+close the scanner
+newVanilla() method
+creates scanner for user prompts
+asks the user to enter in model, speed, range, price individually
+creates a newVanillaJet object and stores the input into the appropriate places
+calls the addJet method into the object hanger and passes through the newVanillaJet object
+newCargo() method
+creates scanner for user prompts
+asks the user to enter in model, speed, range, price individually
+creates a newCargoJet object and stores the input into the appropriate places
+calls the addJet method into the object hanger and passes through the newCargoJet object
+newFighter() method
+creates scanner for user prompts
+asks the user to enter in model, speed, range, price individually
+creates a newFighterJet object and stores the input into the appropriate places
+calls the addJet method into the object hanger and passes through the newFighterJet object
+displayUserMenu() method
+displays the main user menu
+
+Jet class
+declares Sting model
+declares double speed
+declares int range
+declares long price
+fly() method
+prints out the model of the plane that has taken off
+getSpeedInMach() method
+calculates mach speed from the airplane selected and returns the speed as a double
+getters and setters for all variables
+hash code
+equals code
+toString
+Jet constructor
+no-args Jet constructor
+
+JetImpl class extends from Jet
+JetImpl constructor
+CargoPlane class extends from Jet implements CargoCarrier
+CargoPlane constructor
+loadCargo() method which is an interface of CargoCarrier
+FighterJet class extends from Jet implements CombatReady
+FighterJet constructor
+fight() method which is an interface of CombatReady
+
+CargoCarrier interface
+loadCargo() method
+
+CombatReady interface
+fight() method
+
+AirField class
+imports DecimalFormat
+...more to enter here...
+
 
 ### Technologies/Techniques Used
 - Created an instance of the main application to be able to launch the app inside of the main and have that be the only method in there.
@@ -91,8 +192,9 @@ After each menu or sub menu item is selected it will bring you back to the main 
 - I need to spend less time on how the print out format looks and more time obtaining the mvp. Once the mvp is obtained go for a few stretch goals and work on the README.md before working on how the format of the print out looks.
 - Learned some about how interfaces work in the program.
 - Obtained a better understanding of how to use getters and setters.
-- Stick to the UML. It is amazing at how easy it is to stray from the project where it will be more effiecent to stick with a plan and make the plan happen instead of the rabbit holes you can go into.
-- One important thing is to keep on top of adding comments while you code so that you aren't trying to go back and add comments after all of the code is done.i
+- Stick to the UML. It is amazing at how easy it is to stray from the project where it will be more efficient to stick with a plan and make the plan happen instead of the rabbit holes you can go into.
+- One important thing is to keep on top of adding comments while you code so that you aren't trying to go back and add comments after all of the code is done.
+- It took much longer than expected to add a simple return to main menu option. The issue that I ran into was the when you are at the switch and elect to go back to the main menu there wouldn't be an issue but when you elected to do a sub menu option you would be put back into the sub menu and have to choose to go back to the main menu again. Eventually I was able to make it work with a few if statements but it still took longer than I expected it to.ui
 
 ### Problems/Issues 
 - I was unable to close all scanners
