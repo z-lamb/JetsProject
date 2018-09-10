@@ -7,7 +7,7 @@ public class JetApplication {
 	public static JetApplication jetApp = new JetApplication();
 
 	// creates a new AirField
-	AirField hanger = new AirField();
+	public AirField hanger = new AirField();
 
 	public static void main(String[] args) {
 
@@ -22,6 +22,7 @@ public class JetApplication {
 		// creates scanner for user input
 		Scanner sc = new Scanner(System.in);
 
+		// beginning of menu options
 		System.out.println("Please make a selection from the menu below:");
 		displayUserMenu();
 		String userInput = sc.nextLine();
