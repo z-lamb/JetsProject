@@ -158,7 +158,33 @@ fight() method
 
 AirField class
 imports DecimalFormat
-...more to enter here...
+create private variable jets array
+create new object for decimal format
+empty AirField constructor
+create 5 new plane objects
+create new array of 10
+assign the 5 plane objects to locations in the array
+listFleet() method
+iterates over a foreach loop in the jets array
+if the jet array location is not equal to null call the fly method from the Jet class
+fastestJet() method
+declare double fast variable and assign it 0
+declare String model variable and assign it to ""
+iterates over a foreach loop in the jets array
+if the jet array location is not equal to null check to see if the the speed is faster than the current value of fast
+if the speed is faster update the variable fast and model with the current airplane information
+fastestJetMach() method
+declare double fast variable and assign it 0
+declare String model variable and assign it to ""
+iterates over a foreach loop in the jets array
+if the jet array location is not equal to null check to see if the the speed is faster than the current value of fast
+if the speed is faster update the variable fast with the getSpeedInMach and model with the current airplane information and update the decimal format in the output
+fastestJet() method
+declare double fast variable and assign it 0
+declare String model variable and assign it to ""
+iterates over a foreach loop in the jets array
+if the jet array location is not equal to null check to see if the the range is greater than the current value of range
+if the range is greater than the value for range update the variable fast and model with the current airplane information
 
 
 ### Technologies/Techniques Used
