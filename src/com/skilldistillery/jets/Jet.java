@@ -14,7 +14,8 @@ public abstract class Jet {
 	// getSpeedInMach method
 	public double getSpeedInMach() {
 		double output = 0;
-		
+		output = getSpeed() * 0.001303;
+
 		return output;
 	}
 

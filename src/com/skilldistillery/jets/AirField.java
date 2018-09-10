@@ -1,9 +1,12 @@
 package com.skilldistillery.jets;
 
+import java.text.DecimalFormat;
+
 public class AirField {
 
 	private Jet[] jets;
-
+	private DecimalFormat df = new DecimalFormat("0.00");
+	
 	public AirField() {
 		CargoPlane cp1 = new CargoPlane("Boeing C-17 Globemaster III", 515, 2785, 218000000);
 		CargoPlane cp2 = new CargoPlane("Lockheed C-5M Super Galaxy", 518, 5695, 22954000);
@@ -58,7 +61,21 @@ public class AirField {
 			}
 		}
 		System.out.println(model + " is the fastest Jet with a speed of " + fast + " mph.");
+	}
+	public void fastestJetMach() {
+		
 		System.out.println();
+		double fast = 0;
+		String model = "";
+		for (Jet jet : jets) {
+			if (jet != null) {
+				if (jet.getSpeed() > fast) {
+					fast = jet.getSpeedInMach();
+					model = jet.getModel();
+				}
+			}
+		}
+		System.out.println(model + " is the fastest Jet with a speed of Mach " + df.format(fast) + ".");
 	}
 
 	public void longestRangeJet() {
@@ -83,7 +100,7 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof CargoCarrier) {
-					((CargoPlane) jet).loadFast();
+					((CargoPlane) jet).loadCargo();
 
 				}
 			}
@@ -96,7 +113,7 @@ public class AirField {
 		for (Jet jet : jets) {
 			if (jet != null) {
 				if (jet instanceof FighterJet) {
-					((FighterJet) jet).dropBomb();
+					 ((FighterJet) jet).dropBomb();
 
 				}
 			}
@@ -111,16 +128,6 @@ public class AirField {
 				break;
 			}
 
-		}
-	}
-
-	public void loadCargo() {
-		System.out.println();
-		for (Jet jet : jets) {
-			if (jet != null) {
-				loadCargo();
-
-			}
 		}
 	}
 }
