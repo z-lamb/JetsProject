@@ -186,6 +186,8 @@ iterates over a foreach loop in the jets array
 if the jet array location is not equal to null check to see if the the range is greater than the current value of range
 if the range is greater than the value for range update the variable fast and model with the current airplane information
 
+...add the last methods for the class...
+
 
 ### Technologies/Techniques Used
 - Created an instance of the main application to be able to launch the app inside of the main and have that be the only method in there.
